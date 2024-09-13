@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import MainPage from "../src/views/MainPage"
+import AboutPage from './views/AboutPage';
+import { Route, Routes } from 'react-router-dom';
+import Mission from './views/Mission';
+import Ofertas from './views/Ofertas';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <div className='overflow-hidden'>
+     <Routes>
+        <Route path='/' element={< MainPage />} />
+        <Route path='about' element={< AboutPage />} />
+        <Route path='mission' element={<Mission />} />
+        <Route path='ofertas' element={<Ofertas />} />
+      </Routes>
+     </div>
+
+    </>
   );
 }
 
